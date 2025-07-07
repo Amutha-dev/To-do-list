@@ -1,0 +1,184 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body styling */
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+   /* background-color: black;  Updated background color */
+}
+
+/* Container to hold everything */
+
+.container {
+    
+    background-color: #fef5e7;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+.container::before{
+    content: "";
+    background-image: url('todolist.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4; 
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    /* border-radius: 10px; */
+}
+
+/* Heading styling */
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #6e2c00; /* Updated to a calming blue tone */
+    text-align: center;
+}
+
+/* Input container for task entry */
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Input box styling */
+input[type="text"] {
+    width: 70%;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 2px solid #6e2c00; /* Updated border color */
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #6e2c00; /* Darker focus border */
+    box-shadow: 0 0 5px #6e2c00;
+}
+
+/* Add button styling */
+button {
+    padding: 12px 20px;
+    background-color: #6e2c00;
+    color: #fcf3cf;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #6e2c00; /* Darker hover color */
+    padding: 15px 25px;
+}
+
+/* Task list styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Task item styling */
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ccc; /* Updated to dashed separator */
+    font-size: 1rem;
+}
+
+/* Task completion button styling */
+li button {
+    background-color: transparent;
+    color: #34a853; /* Green for complete button */
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+li button:hover {
+    color: #0c661b; /* Darker green on hover */
+    background-color: transparent;
+    font-size: 2rem;
+}
+
+/* Remove button */
+li .remove-btn {
+    background-color: #ea4335; /* Red color for remove button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+li .remove-btn:hover{
+    background-color: #ea4335; /* Darker red on hover */
+    color: white;
+    font-size: 1rem;
+}
+
+/* Task text styling */
+.completed {
+    text-decoration: line-through;
+    color: #6c757d;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .input-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    li button,
+    li .remove-btn {
+        align-self: flex-end;
+    }
+}
